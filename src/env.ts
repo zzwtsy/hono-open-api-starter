@@ -13,6 +13,8 @@ const EnvSchema = z.object({
   DB_NAME: z.string(),
   DB_USER: z.string(),
   DB_PASSWORD: z.string(),
+  DB_SLOW_QUERY_THRESHOLD: z.coerce.number().default(100),
+  DB_VERY_SLOW_QUERY_THRESHOLD: z.coerce.number().default(200),
   CORS_ORIGINS: z.string().transform(v => v.split(",").map(s => s.trim()).filter(Boolean)).default([]),
 }).superRefine((inout, ctx) => {
   if (!inout.DB_HOST || inout.DB_HOST === "") {

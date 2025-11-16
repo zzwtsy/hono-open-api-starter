@@ -25,7 +25,6 @@ const streams = [
     stream: NODE_ENV === "production"
       // eslint-disable-next-line node/prefer-global/process
       ? process.stdout
-    // 1 = stdout
       : pretty(),
   },
   {
