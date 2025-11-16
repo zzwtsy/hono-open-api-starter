@@ -1,0 +1,27 @@
+{
+  "name": "hono-open-api-starter",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@10.20.0",
+  "description": "",
+  "author": "",
+  "keywords": [],
+  "scripts": {
+    "dev:frontend": "pnpm -C apps/frontend dev",
+    "build:frontend": "pnpm -C apps/frontend build",
+    "dev:backend": "pnpm -C apps/backend dev",
+    "build:backend": "pnpm -C apps/backend build",
+    "lint:frontend": "pnpm -C apps/frontend lint",
+    "lint:fix:frontend": "pnpm -C apps/frontend lint:fix",
+    "lint:backend": "pnpm -C apps/backend lint",
+    "lint:fix:backend": "pnpm -C apps/backend lint:fix",
+    "lint:all": "pnpm lint:frontend && pnpm lint:backend",
+    "lint:fix:all": "pnpm lint:fix:frontend && pnpm lint:fix:backend"
+  },
+  "devDependencies": {
+    "@alova/wormhole": "^1.4.5",
+    "@antfu/eslint-config": "^6.2.0",
+    "eslint": "^9.39.1",
+    "eslint-plugin-drizzle": "^0.2.3"
+  }
+}
