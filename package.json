@@ -4,10 +4,11 @@
   "version": "0.0.0",
   "description": "A starter project for building APIs with Hono and OpenAPI",
   "scripts": {
-    "dev": "tsx watch src/index.ts",
+    "dev": "concurrently \"tsx watch src/index.ts\" \"tsx scripts/watch-routes.ts\"",
     "build": "node esbuild.config.mjs",
     "start": "node dist/server.js",
     "test": "cross-env NODE_ENV=test vitest",
+    "watch:routes": "tsx scripts/watch-routes.ts",
     "lint": "eslint .",
     "lint:fix": "npm run lint --fix",
     "db:generate": "drizzle-kit generate",
@@ -35,6 +36,8 @@
   "devDependencies": {
     "@antfu/eslint-config": "^6.2.0",
     "@types/node": "^24.10.1",
+    "chokidar": "^4.0.3",
+    "concurrently": "^9.2.1",
     "cross-env": "^10.1.0",
     "drizzle-kit": "^0.31.7",
     "esbuild": "^0.27.0",
